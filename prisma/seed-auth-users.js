@@ -22,7 +22,7 @@ const supabase = createClient(supabaseUrl, serviceRoleKey, {
 const defaultUsers = [
   {
     id: "e415ef40-8452-4752-9426-302ef35b5463",
-    email: "admin@industrymirror.id",
+    email: "admin@smartcareer.id",
     password: "Password123!",
     role: "admin",
     fullName: "System Administrator"
