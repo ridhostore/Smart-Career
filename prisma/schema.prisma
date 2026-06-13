@@ -1,0 +1,391 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ============================================================
+// ENUMS
+// ============================================================
+
+enum UserRole {
+  student
+  university
+  admin
+}
+
+enum CareerFitCategory {
+  excellent
+  good
+  moderate
+  weak
+  poor
+}
+
+enum NotificationType {
+  info
+  success
+  warning
+  error
+}
+
+enum GradeScale {
+  A
+  AB
+  B
+  BC
+  C
+  D
+  E
+}
+
+// ============================================================
+// USERS
+// ============================================================
+
+model User {
+  id        String    @id @default(uuid()) @db.Uuid
+  authId    String    @unique @map("auth_id") // Supabase Auth UUID
+  email     String    @unique
+  fullName  String    @map("full_name")
+  role      UserRole  @default(student)
+  avatarUrl String?   @map("avatar_url")
+  isActive  Boolean   @default(true) @map("is_active")
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+
+  studentProfile  StudentProfile?
+  universityAdmin UniversityAdmin?
+  activityLogs    ActivityLog[]
+  notifications   Notification[]
+
+  @@map("users")
+}
+
+// ============================================================
+// UNIVERSITIES
+// ============================================================
+
+model University {
+  id          String    @id @default(uuid()) @db.Uuid
+  name        String    @unique
+  code        String    @unique @db.VarChar(20)
+  address     String?
+  city        String?
+  province    String?
+  logoUrl     String?   @map("logo_url")
+  website     String?
+  email       String?
+  phone       String?
+  accreditation String? @db.VarChar(5)
+  isActive    Boolean   @default(true) @map("is_active")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+  deletedAt   DateTime? @map("deleted_at")
+
+  studyPrograms   StudyProgram[]
+  universityAdmins UniversityAdmin[]
+
+  @@map("universities")
+}
+
+// ============================================================
+// STUDY PROGRAMS (PROGRAM STUDI)
+// ============================================================
+
+model StudyProgram {
+  id           String    @id @default(uuid()) @db.Uuid
+  universityId String    @map("university_id") @db.Uuid
+  name         String
+  code         String    @db.VarChar(20)
+  degree       String    @default("S1") @db.VarChar(10)
+  accreditation String?  @db.VarChar(5)
+  isActive     Boolean   @default(true) @map("is_active")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+  deletedAt    DateTime? @map("deleted_at")
+
+  university      University       @relation(fields: [universityId], references: [id])
+  courses         Course[]
+  studentProfiles StudentProfile[]
+  careerTargets   CareerTarget[]
+
+  @@unique([universityId, code])
+  @@map("study_programs")
+}
+
+// ============================================================
+// CAREER TARGETS
+// ============================================================
+
+model CareerTarget {
+  id             String    @id @default(uuid()) @db.Uuid
+  studyProgramId String    @map("study_program_id") @db.Uuid
+  name           String
+  description    String?
+  industryField  String    @map("industry_field")
+  linkedinKeyword String   @map("linkedin_keyword")
+  jobstreetKeyword String  @map("jobstreet_keyword")
+  glintsKeyword  String    @map("glints_keyword")
+  isActive       Boolean   @default(true) @map("is_active")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+  deletedAt      DateTime? @map("deleted_at")
+
+  studyProgram    StudyProgram    @relation(fields: [studyProgramId], references: [id])
+  careerWeights   CareerWeight[]
+  studentProfiles StudentProfile[]
+  careerScores    CareerScore[]
+
+  @@map("career_targets")
+}
+
+// ============================================================
+// COURSES (MATA KULIAH)
+// ============================================================
+
+model Course {
+  id             String    @id @default(uuid()) @db.Uuid
+  studyProgramId String    @map("study_program_id") @db.Uuid
+  name           String
+  code           String    @db.VarChar(20)
+  credits        Int       @default(3) // SKS
+  semester       Int       // 1-8
+  description    String?
+  isActive       Boolean   @default(true) @map("is_active")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+  deletedAt      DateTime? @map("deleted_at")
+
+  studyProgram  StudyProgram   @relation(fields: [studyProgramId], references: [id])
+  careerWeights CareerWeight[]
+  studentGrades StudentGrade[]
+
+  @@unique([studyProgramId, code])
+  @@map("courses")
+}
+
+// ============================================================
+// STUDENT PROFILES
+// ============================================================
+
+model StudentProfile {
+  id             String    @id @default(uuid()) @db.Uuid
+  userId         String    @unique @map("user_id") @db.Uuid
+  studyProgramId String    @map("study_program_id") @db.Uuid
+  careerTargetId String?   @map("career_target_id") @db.Uuid
+  nim            String?   @unique @db.VarChar(30) // Nomor Induk Mahasiswa
+  semester       Int       @default(1)
+  gpa            Decimal   @default(0) @db.Decimal(4, 2)
+  bio            String?
+  phoneNumber    String?   @map("phone_number") @db.VarChar(20)
+  birthDate      DateTime? @map("birth_date") @db.Date
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+  deletedAt      DateTime? @map("deleted_at")
+
+  user            User             @relation(fields: [userId], references: [id])
+  studyProgram    StudyProgram     @relation(fields: [studyProgramId], references: [id])
+  careerTarget    CareerTarget?    @relation(fields: [careerTargetId], references: [id])
+  studentGrades   StudentGrade[]
+  careerScores    CareerScore[]
+  aiRecommendations AiRecommendation[]
+  jobRecommendations JobRecommendation[]
+
+  @@map("student_profiles")
+}
+
+// ============================================================
+// STUDENT GRADES (NILAI MAHASISWA)
+// ============================================================
+
+model StudentGrade {
+  id               String    @id @default(uuid()) @db.Uuid
+  studentProfileId String    @map("student_profile_id") @db.Uuid
+  courseId         String    @map("course_id") @db.Uuid
+  numericGrade     Decimal   @map("numeric_grade") @db.Decimal(5, 2) // 0-100
+  letterGrade      GradeScale? @map("letter_grade")
+  semester         Int
+  academicYear     String    @map("academic_year") @db.VarChar(10) // e.g. 2023/2024
+  notes            String?
+  createdAt        DateTime  @default(now()) @map("created_at")
+  updatedAt        DateTime  @updatedAt @map("updated_at")
+  deletedAt        DateTime? @map("deleted_at")
+
+  studentProfile StudentProfile @relation(fields: [studentProfileId], references: [id])
+  course         Course         @relation(fields: [courseId], references: [id])
+
+  @@unique([studentProfileId, courseId])
+  @@map("student_grades")
+}
+
+// ============================================================
+// CAREER WEIGHTS (BOBOT KARIR)
+// ============================================================
+
+model CareerWeight {
+  id             String    @id @default(uuid()) @db.Uuid
+  careerTargetId String    @map("career_target_id") @db.Uuid
+  courseId       String    @map("course_id") @db.Uuid
+  weight         Decimal   @db.Decimal(5, 4) // e.g. 0.4000 = 40%
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+  deletedAt      DateTime? @map("deleted_at")
+
+  careerTarget CareerTarget @relation(fields: [careerTargetId], references: [id])
+  course       Course       @relation(fields: [courseId], references: [id])
+
+  @@unique([careerTargetId, courseId])
+  @@map("career_weights")
+}
+
+// ============================================================
+// CAREER SCORES (HASIL SKOR KARIR)
+// ============================================================
+
+model CareerScore {
+  id               String            @id @default(uuid()) @db.Uuid
+  studentProfileId String            @map("student_profile_id") @db.Uuid
+  careerTargetId   String            @map("career_target_id") @db.Uuid
+  score            Decimal           @db.Decimal(5, 2) // 0-100
+  category         CareerFitCategory
+  computedAt       DateTime          @default(now()) @map("computed_at")
+  createdAt        DateTime          @default(now()) @map("created_at")
+  updatedAt        DateTime          @updatedAt @map("updated_at")
+  deletedAt        DateTime?         @map("deleted_at")
+
+  studentProfile StudentProfile @relation(fields: [studentProfileId], references: [id])
+  careerTarget   CareerTarget   @relation(fields: [careerTargetId], references: [id])
+
+  @@unique([studentProfileId, careerTargetId])
+  @@map("career_scores")
+}
+
+// ============================================================
+// AI RECOMMENDATIONS
+// ============================================================
+
+model AiRecommendation {
+  id               String    @id @default(uuid()) @db.Uuid
+  studentProfileId String    @map("student_profile_id") @db.Uuid
+  careerTargetName String    @map("career_target_name")
+  strengths        Json      @default("[]")
+  weaknesses       Json      @default("[]")
+  skillGap         Json      @map("skill_gap") @default("[]")
+  certifications   Json      @default("[]")
+  courses          Json      @default("[]")
+  roadmap          Json      @default("[]")
+  rawResponse      String?   @map("raw_response") @db.Text
+  model            String    @default("llama-3.3-70b-versatile")
+  generatedAt      DateTime  @default(now()) @map("generated_at")
+  createdAt        DateTime  @default(now()) @map("created_at")
+  updatedAt        DateTime  @updatedAt @map("updated_at")
+  deletedAt        DateTime? @map("deleted_at")
+
+  studentProfile StudentProfile @relation(fields: [studentProfileId], references: [id])
+
+  @@map("ai_recommendations")
+}
+
+// ============================================================
+// JOB RECOMMENDATIONS
+// ============================================================
+
+model JobRecommendation {
+  id               String    @id @default(uuid()) @db.Uuid
+  studentProfileId String    @map("student_profile_id") @db.Uuid
+  careerTargetName String    @map("career_target_name")
+  linkedinUrl      String    @map("linkedin_url")
+  jobstreetUrl     String    @map("jobstreet_url")
+  glintsUrl        String    @map("glints_url")
+  createdAt        DateTime  @default(now()) @map("created_at")
+  updatedAt        DateTime  @updatedAt @map("updated_at")
+  deletedAt        DateTime? @map("deleted_at")
+
+  studentProfile StudentProfile @relation(fields: [studentProfileId], references: [id])
+
+  @@map("job_recommendations")
+}
+
+// ============================================================
+// UNIVERSITY ADMINS
+// ============================================================
+
+model UniversityAdmin {
+  id           String    @id @default(uuid()) @db.Uuid
+  userId       String    @unique @map("user_id") @db.Uuid
+  universityId String    @map("university_id") @db.Uuid
+  position     String?
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+  deletedAt    DateTime? @map("deleted_at")
+
+  user       User       @relation(fields: [userId], references: [id])
+  university University @relation(fields: [universityId], references: [id])
+
+  @@map("university_admins")
+}
+
+// ============================================================
+// ACTIVITY LOGS (AUDIT TRAIL)
+// ============================================================
+
+model ActivityLog {
+  id         String    @id @default(uuid()) @db.Uuid
+  userId     String?   @map("user_id") @db.Uuid
+  action     String
+  resource   String
+  resourceId String?   @map("resource_id")
+  ipAddress  String?   @map("ip_address")
+  userAgent  String?   @map("user_agent") @db.Text
+  metadata   Json?
+  createdAt  DateTime  @default(now()) @map("created_at")
+
+  user User? @relation(fields: [userId], references: [id])
+
+  @@map("activity_logs")
+}
+
+// ============================================================
+// NOTIFICATIONS
+// ============================================================
+
+model Notification {
+  id        String           @id @default(uuid()) @db.Uuid
+  userId    String           @map("user_id") @db.Uuid
+  type      NotificationType @default(info)
+  title     String
+  message   String
+  isRead    Boolean          @default(false) @map("is_read")
+  actionUrl String?          @map("action_url")
+  createdAt DateTime         @default(now()) @map("created_at")
+  updatedAt DateTime         @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("notifications")
+}
+
+// ============================================================
+// SYSTEM SETTINGS
+// ============================================================
+
+model SystemSetting {
+  id        String    @id @default(uuid()) @db.Uuid
+  key       String    @unique
+  value     String    @db.Text
+  type      String    @default("string") @db.VarChar(20) // string | number | boolean | json
+  label     String?
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+
+  @@map("system_settings")
+}
