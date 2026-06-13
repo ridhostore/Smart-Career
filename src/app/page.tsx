@@ -10,7 +10,7 @@ import { FaqSection } from "@/features/landing/components/faq-section";
 import { LandingFooter } from "@/features/landing/components/footer";
 
 export const metadata: Metadata = {
-  title: "Industry Mirror — Career Intelligence Platform for Economics Students",
+  title: "SmartCareer — Career Intelligence Platform for Economics Students",
   description:
     "Platform AI yang membantu mahasiswa ekonomi menemukan jalur karier terbaik berdasarkan performa akademik.",
 };

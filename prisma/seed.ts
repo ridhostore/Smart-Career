@@ -27,7 +27,7 @@ async function main() {
   console.log("Seeding system settings...");
   await prisma.systemSetting.createMany({
     data: [
-      { key: "platform_name", value: "Industry Mirror", type: "string", label: "Platform Name" },
+      { key: "platform_name", value: "SmartCareer", type: "string", label: "Platform Name" },
       { key: "maintenance_mode", value: "false", type: "boolean", label: "Maintenance Mode" },
       { key: "groq_api_fallback", value: "true", type: "boolean", label: "AI Fallback Option" },
     ],
@@ -37,7 +37,7 @@ async function main() {
   console.log("Seeding system administrator...");
   const adminUser = await prisma.user.create({
     data: {
-      email: "admin@industrymirror.id",
+      email: "admin@smartcareer.id",
       fullName: "Super Administrator",
       role: UserRole.admin,
       authId: "e415ef40-8452-4752-9426-302ef35b5463",

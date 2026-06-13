@@ -118,9 +118,9 @@ export default function ForgotPasswordPage() {
             key="success-state"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="rounded-xl border border-teal-200 bg-teal-50/50 p-6 text-center dark:border-teal-900/30 dark:bg-teal-950/20"
+            className="rounded-xl border border-blue-200 bg-blue-50/50 p-6 text-center dark:border-blue-900/30 dark:bg-blue-950/20"
           >
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-teal-100 text-teal-600 dark:bg-teal-900/50 dark:text-teal-400 mb-4">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-400 mb-4">
               <Send className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-bold text-foreground mb-2">Instruksi Terkirim!</h3>
@@ -135,7 +135,7 @@ export default function ForgotPasswordPage() {
       <div className="text-center">
         <Link
           href="/login"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-500 transition-colors duration-200"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-500 transition-colors duration-200"
         >
           <ArrowLeft className="h-4 w-4" />
           <span>Kembali ke Halaman Login</span>

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Compass, Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -41,10 +42,14 @@ export function LandingNavbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight text-foreground">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-600 shadow-md">
-            <Compass className="h-5 w-5 text-white" />
-          </div>
-          <span>Industry Mirror</span>
+          <Image
+            src="/logo.png"
+            alt="SmartCareer Logo"
+            width={36}
+            height={36}
+            className="rounded-lg shadow-md border border-neutral-200 dark:border-neutral-800"
+          />
+          <span>SmartCareer</span>
         </Link>
 
         {/* Desktop Navigation */}

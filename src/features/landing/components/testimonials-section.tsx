@@ -27,7 +27,7 @@ export function TestimonialsSection() {
       role: "Kaprodi Pembangunan UGM",
       company: "Fakultas Ekonomi",
       content:
-        "Industry Mirror memberikan data kurikulum gap analitik yang sangat berharga. Kami bisa merevisi fokus mata kuliah pilihan kami agar relevan dengan tuntutan pasar kerja saat ini.",
+        "SmartCareer memberikan data kurikulum gap analitik yang sangat berharga. Kami bisa merevisi fokus mata kuliah pilihan kami agar relevan dengan tuntutan pasar kerja saat ini.",
       rating: 5,
       avatar: "B",
     },
@@ -56,7 +56,7 @@ export function TestimonialsSection() {
               className="bg-card text-card-foreground border border-border/50 rounded-2xl p-6 transition-all duration-300 card-glow-hover flex flex-col justify-between space-y-6 relative"
             >
               {/* Quote Icon watermark */}
-              <Quote className="absolute right-6 top-6 h-8 w-8 text-teal-500/10 shrink-0" />
+              <Quote className="absolute right-6 top-6 h-8 w-8 text-accent/10 shrink-0" />
               
               <div className="space-y-4">
                 {/* Rating stars */}
@@ -73,8 +73,8 @@ export function TestimonialsSection() {
 
               {/* User Profile Footer */}
               <div className="flex items-center gap-3 pt-4 border-t border-border/50">
-                <Avatar className="h-10 w-10 border border-teal-500/20">
-                  <AvatarFallback className="bg-teal-500/10 text-teal-700 dark:text-teal-400 font-bold text-sm">
+                <Avatar className="h-10 w-10 border border-accent/20">
+                  <AvatarFallback className="bg-accent/10 text-accent font-bold text-sm">
                     {t.avatar}
                   </AvatarFallback>
                 </Avatar>

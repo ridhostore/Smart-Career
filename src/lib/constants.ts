@@ -1,6 +1,6 @@
 // Application constants
 
-export const APP_NAME = "Industry Mirror";
+export const APP_NAME = "SmartCareer";
 export const APP_TAGLINE = "Career Intelligence Platform for Economics Students";
 export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 
@@ -117,10 +117,10 @@ export const AI_CACHE_HOURS = 24;
 
 // Colors
 export const BRAND_COLORS = {
-  primary: "#0F766E",
-  secondary: "#14B8A6",
-  accent: "#F59E0B",
-  background: "#F8FAFC",
+  primary: "#0A0A0A",
+  secondary: "#171717",
+  accent: "#2563EB",
+  background: "#FFFFFF",
 } as const;
 
 // Route paths

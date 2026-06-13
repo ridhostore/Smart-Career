@@ -8,7 +8,7 @@ export function UniversitySection() {
           
           {/* Left Column: Text Info */}
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-xs font-semibold text-teal-700 dark:text-teal-300">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-700 dark:text-blue-300">
               <GraduationCap className="h-3.5 w-3.5" />
               <span>Solusi untuk Pendidikan Tinggi</span>
             </div>
@@ -24,7 +24,7 @@ export function UniversitySection() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400">
                   <Users className="h-4 w-4" />
                 </div>
                 <h4 className="font-bold text-foreground">Pemantauan Agregat</h4>
@@ -34,7 +34,7 @@ export function UniversitySection() {
               </div>
 
               <div className="space-y-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400">
                   <BarChart3 className="h-4 w-4" />
                 </div>
                 <h4 className="font-bold text-foreground">Curriculum Gap Analysis</h4>
@@ -82,7 +82,7 @@ export function UniversitySection() {
                   <div className="space-y-1">
                     <div className="flex justify-between font-light">
                       <span>Investment Analyst</span>
-                      <span className="font-semibold text-teal-600">88.5% Fit</span>
+                      <span className="font-semibold text-blue-600">88.5% Fit</span>
                     </div>
                     <div className="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                       <div className="h-full bg-primary rounded-full" style={{ width: "88%" }} />
@@ -92,7 +92,7 @@ export function UniversitySection() {
                   <div className="space-y-1">
                     <div className="flex justify-between font-light">
                       <span>Corporate Accountant</span>
-                      <span className="font-semibold text-teal-600">82.0% Fit</span>
+                      <span className="font-semibold text-blue-600">82.0% Fit</span>
                     </div>
                     <div className="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                       <div className="h-full bg-primary rounded-full" style={{ width: "82%" }} />
@@ -102,7 +102,7 @@ export function UniversitySection() {
                   <div className="space-y-1">
                     <div className="flex justify-between font-light">
                       <span>Data Analyst (Econ)</span>
-                      <span className="font-semibold text-teal-600">74.5% Fit</span>
+                      <span className="font-semibold text-blue-600">74.5% Fit</span>
                     </div>
                     <div className="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                       <div className="h-full bg-primary rounded-full" style={{ width: "74%" }} />

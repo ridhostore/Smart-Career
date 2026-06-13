@@ -122,7 +122,7 @@ export default function UniversityAnalyticsPage() {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="flex flex-col items-center gap-4">
-          <Loader2 className="h-8 w-8 animate-spin text-teal-600" />
+          <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
           <p className="text-sm text-muted-foreground">Menganalisis data kelas...</p>
         </div>
       </div>
@@ -135,7 +135,7 @@ export default function UniversityAnalyticsPage() {
         <Card className="max-w-md w-full">
           <CardContent className="pt-6 text-center space-y-4">
             <p className="text-destructive font-medium">{error}</p>
-            <Button variant="outline" onClick={loadData} className="gap-2 text-teal-700 border-teal-600/30">
+            <Button variant="outline" onClick={loadData} className="gap-2 text-blue-700 border-blue-600/30">
               <RefreshCw className="h-4 w-4" />
               Coba Lagi
             </Button>
@@ -151,7 +151,7 @@ export default function UniversityAnalyticsPage() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl font-extrabold tracking-tight flex items-center gap-2">
-            <BarChart3 className="h-6 w-6 text-teal-600" />
+            <BarChart3 className="h-6 w-6 text-blue-600" />
             Analitik Karir & Kelas
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
@@ -222,7 +222,7 @@ export default function UniversityAnalyticsPage() {
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <div>
               <CardTitle className="text-sm font-bold flex items-center gap-2 text-slate-800 dark:text-slate-200">
-                <BookOpen className="h-4.5 w-4.5 text-teal-600" />
+                <BookOpen className="h-4.5 w-4.5 text-blue-600" />
                 Tren Nilai Rata-rata Mata Kuliah
               </CardTitle>
               <CardDescription className="text-xs">Visualisasi distribusi nilai rata-rata mata kuliah</CardDescription>
@@ -285,7 +285,7 @@ export default function UniversityAnalyticsPage() {
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <div>
               <CardTitle className="text-sm font-bold flex items-center gap-2 text-slate-800 dark:text-slate-200">
-                <Briefcase className="h-4.5 w-4.5 text-teal-600" />
+                <Briefcase className="h-4.5 w-4.5 text-blue-600" />
                 Tren Target Karir
               </CardTitle>
               <CardDescription className="text-xs">Berdasarkan data minat mahasiswa</CardDescription>
@@ -309,7 +309,7 @@ export default function UniversityAnalyticsPage() {
                       <p className="text-sm font-bold text-slate-800 dark:text-slate-200 line-clamp-1">{c.career}</p>
                       <p className="text-xs text-muted-foreground mt-0.5">{c.percentage.toFixed(1)}% dari total mahasiswa</p>
                     </div>
-                    <span className="text-sm font-extrabold text-teal-700 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/30 px-2 py-1 rounded">
+                    <span className="text-sm font-extrabold text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30 px-2 py-1 rounded">
                       {c.count} Mhs
                     </span>
                   </div>

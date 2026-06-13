@@ -130,7 +130,7 @@ export default function AdminWeightsPage() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl font-extrabold tracking-tight flex items-center gap-2">
-            <Scale className="h-6 w-6 text-teal-600" />
+            <Scale className="h-6 w-6 text-blue-600" />
             Kelola Bobot Karir
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
@@ -141,7 +141,7 @@ export default function AdminWeightsPage() {
 
       {loadingCareers ? (
         <div className="flex flex-col items-center justify-center py-20 gap-3">
-          <Loader2 className="h-8 w-8 animate-spin text-teal-600" />
+          <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
           <p className="text-sm text-muted-foreground">Memuat data karir...</p>
         </div>
       ) : error ? (
@@ -163,7 +163,7 @@ export default function AdminWeightsPage() {
                     key={c.id}
                     onClick={() => setSelectedCareerId(c.id)}
                     className={`w-full text-left px-5 py-3.5 hover:bg-slate-50/50 dark:hover:bg-slate-900/10 transition-colors flex flex-col gap-1 ${
-                      selectedCareerId === c.id ? "bg-teal-50/50 dark:bg-teal-950/20 border-l-2 border-teal-600" : ""
+                      selectedCareerId === c.id ? "bg-blue-50/50 dark:bg-blue-950/20 border-l-2 border-blue-600" : ""
                     }`}
                   >
                     <span className="font-bold text-sm text-slate-800 dark:text-slate-100">{c.name}</span>
@@ -179,7 +179,7 @@ export default function AdminWeightsPage() {
             {currentCareer && (
               <CardHeader className="pb-3 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
-                  <span className="text-[10px] font-bold text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/30 px-2.5 py-0.5 rounded border border-teal-100 dark:border-teal-900/50 mb-1 inline-block">
+                  <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30 px-2.5 py-0.5 rounded border border-blue-100 dark:border-blue-900/50 mb-1 inline-block">
                     Target: {currentCareer.name}
                   </span>
                   <CardTitle className="text-sm font-bold text-slate-800 dark:text-slate-200 mt-1 flex items-center gap-1">
@@ -197,7 +197,7 @@ export default function AdminWeightsPage() {
             <CardContent className="p-0">
               {loadingWeights ? (
                 <div className="flex flex-col items-center justify-center py-24 gap-3">
-                  <Loader2 className="h-8 w-8 animate-spin text-teal-600" />
+                  <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
                   <p className="text-sm text-muted-foreground">Memuat bobot matakuliah...</p>
                 </div>
               ) : weights.length === 0 ? (
@@ -277,7 +277,7 @@ export default function AdminWeightsPage() {
                       <Button
                         disabled={saving || (totalSum > 0 && !isSumValid)}
                         onClick={handleSave}
-                        className="bg-teal-600 hover:bg-teal-700 text-white font-semibold gap-1.5 self-end"
+                        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold gap-1.5 self-end"
                       >
                         {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
                         Simpan Bobot

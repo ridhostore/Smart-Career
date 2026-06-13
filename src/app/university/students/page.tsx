@@ -113,7 +113,7 @@ export default function UniversityStudentsPage() {
     }
     if (cat.includes("good")) {
       return (
-        <span className="inline-flex items-center rounded-full bg-teal-50 dark:bg-teal-950/30 px-2 py-0.5 text-xs font-semibold text-teal-700 dark:text-teal-400 border border-teal-200 dark:border-teal-900/50">
+        <span className="inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-950/30 px-2 py-0.5 text-xs font-semibold text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-900/50">
           Good
         </span>
       );
@@ -149,14 +149,14 @@ export default function UniversityStudentsPage() {
       >
         <div>
           <h1 className="text-2xl font-extrabold tracking-tight flex items-center gap-2">
-            <GraduationCap className="h-6 w-6 text-teal-600" />
+            <GraduationCap className="h-6 w-6 text-blue-600" />
             Daftar Mahasiswa
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
             Manajemen, pencarian, dan monitoring keselarasan karir mahasiswa institusi Anda
           </p>
         </div>
-        <Button variant="outline" size="sm" onClick={fetchStudentsList} className="gap-2 border-teal-600/20 hover:bg-teal-50 dark:hover:bg-teal-950/20 text-teal-700 dark:text-teal-400 w-fit">
+        <Button variant="outline" size="sm" onClick={fetchStudentsList} className="gap-2 border-blue-600/20 hover:bg-blue-50 dark:hover:bg-blue-950/20 text-blue-700 dark:text-blue-400 w-fit">
           <RefreshCw className="h-3.5 w-3.5" />
           Muat Ulang
         </Button>
@@ -166,7 +166,7 @@ export default function UniversityStudentsPage() {
       <Card className="border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
         <CardHeader className="pb-4 border-b border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-slate-50/50 dark:bg-slate-900/50">
           <CardTitle className="text-sm font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
-            <UserCheck className="h-4.5 w-4.5 text-teal-600" />
+            <UserCheck className="h-4.5 w-4.5 text-blue-600" />
             Database Mahasiswa ({total})
           </CardTitle>
 
@@ -176,7 +176,7 @@ export default function UniversityStudentsPage() {
               placeholder="Cari nama atau NIM..."
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="pl-9 h-9 border-slate-200 dark:border-slate-800 focus-visible:ring-teal-600 focus-visible:ring-1"
+              className="pl-9 h-9 border-slate-200 dark:border-slate-800 focus-visible:ring-blue-600 focus-visible:ring-1"
             />
           </div>
         </CardHeader>
@@ -184,7 +184,7 @@ export default function UniversityStudentsPage() {
         <CardContent className="p-0">
           {loading ? (
             <div className="flex flex-col items-center justify-center py-20 gap-3">
-              <Loader2 className="h-8 w-8 animate-spin text-teal-600" />
+              <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
               <p className="text-sm text-muted-foreground">Memuat data...</p>
             </div>
           ) : error ? (
@@ -199,7 +199,7 @@ export default function UniversityStudentsPage() {
                 <thead>
                   <tr className="border-b border-slate-100 dark:border-slate-800 bg-slate-50/30 dark:bg-slate-900/30">
                     <th
-                      className="px-6 py-3 text-xs font-bold text-muted-foreground uppercase tracking-wider cursor-pointer hover:text-teal-600 transition-colors"
+                      className="px-6 py-3 text-xs font-bold text-muted-foreground uppercase tracking-wider cursor-pointer hover:text-blue-600 transition-colors"
                       onClick={() => handleSort("name")}
                     >
                       <div className="flex items-center gap-1.5">
@@ -214,7 +214,7 @@ export default function UniversityStudentsPage() {
                       Semester
                     </th>
                     <th
-                      className="px-6 py-3 text-xs font-bold text-muted-foreground uppercase tracking-wider cursor-pointer hover:text-teal-600 transition-colors"
+                      className="px-6 py-3 text-xs font-bold text-muted-foreground uppercase tracking-wider cursor-pointer hover:text-blue-600 transition-colors"
                       onClick={() => handleSort("gpa")}
                     >
                       <div className="flex items-center gap-1.5">
@@ -226,7 +226,7 @@ export default function UniversityStudentsPage() {
                       Target Karir
                     </th>
                     <th
-                      className="px-6 py-3 text-xs font-bold text-muted-foreground uppercase tracking-wider cursor-pointer hover:text-teal-600 transition-colors"
+                      className="px-6 py-3 text-xs font-bold text-muted-foreground uppercase tracking-wider cursor-pointer hover:text-blue-600 transition-colors"
                       onClick={() => handleSort("careerFit")}
                     >
                       <div className="flex items-center gap-1.5">
@@ -310,7 +310,7 @@ export default function UniversityStudentsPage() {
                     <Button
                       key={pNum}
                       variant={page === pNum ? "default" : "outline"}
-                      className={`h-8 w-8 text-xs font-semibold border-slate-200 dark:border-slate-800 ${page === pNum ? "bg-teal-600 text-white hover:bg-teal-700" : ""}`}
+                      className={`h-8 w-8 text-xs font-semibold border-slate-200 dark:border-slate-800 ${page === pNum ? "bg-blue-600 text-white hover:bg-blue-700" : ""}`}
                       onClick={() => setPage(pNum)}
                     >
                       {pNum}

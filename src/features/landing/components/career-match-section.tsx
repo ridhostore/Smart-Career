@@ -15,7 +15,7 @@ export function CareerMatchSection() {
           
           {/* Left Column: Explanation */}
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-xs font-semibold text-teal-700 dark:text-teal-300">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-700 dark:text-blue-300">
               <Zap className="h-3.5 w-3.5" />
               <span>Algoritma Pembobotan Ilmiah</span>
             </div>
@@ -31,7 +31,7 @@ export function CareerMatchSection() {
 
             <div className="space-y-4">
               <div className="flex gap-3">
-                <CheckCircle2 className="h-5 w-5 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="h-5 w-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-semibold text-foreground">Normalisasi Nilai Konversi SKS</h4>
                   <p className="text-sm text-muted-foreground font-light">Nilai huruf (A, B, C) dikonversikan menjadi bobot numerik standar 0-100 secara presisi.</p>
@@ -39,7 +39,7 @@ export function CareerMatchSection() {
               </div>
 
               <div className="flex gap-3">
-                <CheckCircle2 className="h-5 w-5 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="h-5 w-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-semibold text-foreground">Pemetaan Bobot Relevansi Industri</h4>
                   <p className="text-sm text-muted-foreground font-light">Setiap mata kuliah memiliki bobot industri (Weight) berkisar antara 0 hingga 1.0.</p>
@@ -47,7 +47,7 @@ export function CareerMatchSection() {
               </div>
 
               <div className="flex gap-3">
-                <CheckCircle2 className="h-5 w-5 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="h-5 w-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-semibold text-foreground">Kalkulasi Formula Terbobot</h4>
                   <p className="text-sm text-muted-foreground font-light">
@@ -103,7 +103,7 @@ export function CareerMatchSection() {
                 <div className="space-y-2 pt-2 border-t border-border">
                   <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wide">
                     <span>Total Fit Score</span>
-                    <span className="text-teal-600 dark:text-teal-400">90.0 / 100</span>
+                    <span className="text-blue-600 dark:text-blue-400">90.0 / 100</span>
                   </div>
                   <div className="h-3 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                     <div className="h-full bg-primary rounded-full transition-all duration-1000" style={{ width: "90%" }} />

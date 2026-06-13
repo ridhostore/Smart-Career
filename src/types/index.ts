@@ -1,4 +1,4 @@
-// Type definitions for Industry Mirror
+// Type definitions for SmartCareer
 
 export interface ApiResponse<T = unknown> {
   success: boolean;

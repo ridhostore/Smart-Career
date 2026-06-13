@@ -18,8 +18,8 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "Industry Mirror — Career Intelligence Platform",
-    template: "%s | Industry Mirror",
+    default: "SmartCareer — Career Intelligence Platform",
+    template: "%s | SmartCareer",
   },
   description:
     "Platform AI yang membantu mahasiswa ekonomi menemukan jalur karier terbaik berdasarkan performa akademik.",
@@ -28,22 +28,22 @@ export const metadata: Metadata = {
     "mahasiswa ekonomi",
     "rekomendasi karir",
     "AI career platform",
-    "industry mirror",
+    "smartcareer",
   ],
-  authors: [{ name: "Industry Mirror Team" }],
-  creator: "Industry Mirror",
+  authors: [{ name: "SmartCareer Team" }],
+  creator: "SmartCareer",
   openGraph: {
     type: "website",
     locale: "id_ID",
     url: process.env.NEXT_PUBLIC_APP_URL,
-    title: "Industry Mirror — Career Intelligence Platform",
+    title: "SmartCareer — Career Intelligence Platform",
     description:
       "Platform AI yang membantu mahasiswa ekonomi menemukan jalur karier terbaik berdasarkan performa akademik.",
-    siteName: "Industry Mirror",
+    siteName: "SmartCareer",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Industry Mirror — Career Intelligence Platform",
+    title: "SmartCareer — Career Intelligence Platform",
     description:
       "Platform AI yang membantu mahasiswa ekonomi menemukan jalur karier terbaik berdasarkan performa akademik.",
   },

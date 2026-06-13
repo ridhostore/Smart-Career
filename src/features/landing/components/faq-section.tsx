@@ -70,7 +70,7 @@ export function FaqSection() {
                   className="w-full flex items-center justify-between p-5 text-left font-bold text-foreground hover:text-primary transition-colors duration-200"
                 >
                   <span className="flex items-center gap-3 text-sm sm:text-base">
-                    <HelpCircle className="h-5 w-5 text-teal-600 dark:text-teal-400 shrink-0" />
+                    <HelpCircle className="h-5 w-5 text-blue-600 dark:text-blue-400 shrink-0" />
                     {faq.q}
                   </span>
                   {isOpen ? (

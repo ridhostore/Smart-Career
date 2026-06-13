@@ -32,57 +32,57 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 100%;
+    --foreground: 222.7 39.3% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222.7 39.3% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 173 83% 26%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 173 72% 40%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 38 92% 50%;
+    --popover-foreground: 222.7 39.3% 11%;
+    --primary: 0 0% 3.9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 221.2 83.2% 53.3%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 173 83% 26%;
-    --chart-1: 173 83% 26%;
-    --chart-2: 173 72% 40%;
-    --chart-3: 38 92% 50%;
-    --chart-4: 221.2 83.2% 53.3%;
-    --chart-5: 291.5 93.7% 43.7%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221.2 83.2% 53.3%;
+    --chart-1: 221.2 83.2% 53.3%;
+    --chart-2: 0 0% 9%;
+    --chart-3: 220 8.9% 46.1%;
+    --chart-4: 220 13% 91%;
+    --chart-5: 0 0% 96.1%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 173 72% 50%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 173 50% 40%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 38 92% 50%;
-    --accent-foreground: 222.2 84% 4.9%;
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 96.1%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 96.1%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 96.1%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 3.9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 217.2 91.2% 59.8%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 173 72% 50%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 217.2 91.2% 59.8%;
+    --chart-1: 217.2 91.2% 59.8%;
+    --chart-2: 0 0% 98%;
+    --chart-3: 0 0% 63.9%;
+    --chart-4: 0 0% 14.9%;
+    --chart-5: 0 0% 9%;
   }
 
   * {
@@ -121,37 +121,46 @@
 @layer utilities {
   /* Glass morphism */
   .glass {
-    @apply backdrop-blur-md bg-white/10 border border-white/20;
+    @apply backdrop-blur-md bg-white/70 border border-slate-200/50;
   }
   .glass-dark {
-    @apply backdrop-blur-md bg-black/20 border border-white/10;
+    @apply backdrop-blur-md bg-neutral-950/70 border border-neutral-800/50;
   }
 
   /* Gradient text */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-neutral-950 to-neutral-700 dark:from-white dark:to-neutral-400 bg-clip-text text-transparent;
   }
   .gradient-text-accent {
-    @apply bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-neutral-950 via-neutral-800 to-blue-600 dark:from-white dark:via-neutral-200 dark:to-blue-400 bg-clip-text text-transparent;
   }
 
   /* Gradient backgrounds */
   .gradient-primary {
-    @apply bg-gradient-to-r from-primary to-secondary;
+    @apply bg-gradient-to-r from-neutral-950 to-neutral-800 dark:from-white dark:to-neutral-200;
   }
   .gradient-hero {
-    background: linear-gradient(135deg, #0f766e 0%, #14b8a6 50%, #065f46 100%);
+    background: radial-gradient(ellipse 60% 60% at 50% -10%, rgba(37, 99, 235, 0.06), transparent 70%);
+  }
+  .dark .gradient-hero {
+    background: radial-gradient(ellipse 60% 60% at 50% -10%, rgba(37, 99, 235, 0.15), transparent 70%);
   }
 
   /* Card glow */
   .card-glow {
-    box-shadow: 0 0 0 1px rgba(15, 118, 110, 0.1), 0 4px 24px rgba(15, 118, 110, 0.08);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 4px 20px rgba(0, 0, 0, 0.02);
+  }
+  .dark .card-glow {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 20px rgba(0, 0, 0, 0.2);
   }
   .card-glow-hover {
-    @apply transition-shadow duration-300;
+    @apply transition-all duration-300;
   }
   .card-glow-hover:hover {
-    box-shadow: 0 0 0 1px rgba(15, 118, 110, 0.2), 0 8px 32px rgba(15, 118, 110, 0.15);
+    box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.15), 0 8px 30px rgba(37, 99, 235, 0.04);
+  }
+  .dark .card-glow-hover:hover {
+    box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.3), 0 8px 30px rgba(37, 99, 235, 0.12);
   }
 
   /* Score badge */

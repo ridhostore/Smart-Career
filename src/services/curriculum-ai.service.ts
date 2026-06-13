@@ -73,7 +73,7 @@ Analisis data di atas dan hasilkan laporan markdown profesional dengan format:
 (minimal 3 sertifikasi yang bisa diraih kampus)
 
 ---
-*Laporan dibuat oleh Industry Mirror AI pada ${new Date().toLocaleDateString("id-ID")}*`;
+*Laporan dibuat oleh SmartCareer AI pada ${new Date().toLocaleDateString("id-ID")}*`;
 }
 
 interface UniversityAggregateStats {

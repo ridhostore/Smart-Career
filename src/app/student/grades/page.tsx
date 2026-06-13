@@ -50,7 +50,7 @@ function getLetterGradeColor(letter: string) {
     case "A":
       return "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300";
     case "AB":
-      return "bg-teal-100 text-teal-800 dark:bg-teal-900/30 dark:text-teal-300";
+      return "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300";
     case "B":
       return "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300";
     case "BC":
@@ -386,7 +386,7 @@ export default function StudentGradesPage() {
         {filteredGrades.length === 0 ? (
           <Card className="card-glow py-12 text-center text-muted-foreground">
             <CardContent className="flex flex-col items-center justify-center p-6">
-              <BookOpen className="h-10 w-10 mb-3 opacity-30 text-teal-600" />
+              <BookOpen className="h-10 w-10 mb-3 opacity-30 text-blue-600" />
               <p className="font-medium">
                 {searchQuery ? "Tidak ditemukan" : "Belum ada nilai yang diinput"}
               </p>

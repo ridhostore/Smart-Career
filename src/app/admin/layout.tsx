@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { redirect } from "next/navigation";
 import {
   Compass,
@@ -94,11 +95,15 @@ export default async function AdminLayout({
       <aside className="hidden md:flex w-64 flex-col border-r border-border bg-card text-card-foreground shrink-0">
         {/* Brand */}
         <div className="flex h-16 items-center gap-2 px-6 border-b border-border">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-600">
-            <Compass className="h-5 w-5 text-white" />
-          </div>
+          <Image
+            src="/logo.png"
+            alt="SmartCareer Logo"
+            width={32}
+            height={32}
+            className="rounded-lg shadow-sm border border-neutral-200 dark:border-neutral-800"
+          />
           <span className="font-extrabold text-base tracking-tight text-foreground">
-            Industry Mirror
+            SmartCareer
           </span>
         </div>
 
@@ -126,7 +131,7 @@ export default async function AdminLayout({
               <Link
                 key={item.name}
                 href={item.href}
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-teal-50 dark:hover:bg-teal-950/20 hover:text-primary transition-all duration-200"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-blue-50 dark:hover:bg-blue-950/20 hover:text-primary transition-all duration-200"
               >
                 <Icon className="h-4 w-4 shrink-0" />
                 <span>{item.name}</span>

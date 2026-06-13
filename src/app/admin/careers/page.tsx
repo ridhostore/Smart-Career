@@ -177,7 +177,7 @@ export default function AdminCareersPage() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl font-extrabold tracking-tight flex items-center gap-2">
-            <Briefcase className="h-6 w-6 text-teal-600" />
+            <Briefcase className="h-6 w-6 text-blue-600" />
             Kelola Target Karir
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
@@ -197,7 +197,7 @@ export default function AdminCareersPage() {
             onClick={handleOpenCreate}
             size="sm"
             disabled={programs.length === 0}
-            className="bg-teal-600 hover:bg-teal-700 text-white font-semibold gap-1.5"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold gap-1.5"
           >
             <Plus className="h-4 w-4" />
             Tambah Target Karir
@@ -220,7 +220,7 @@ export default function AdminCareersPage() {
             <select
               value={selectedProgFilter}
               onChange={e => setSelectedProgFilter(e.target.value)}
-              className="h-9 rounded-md border border-slate-200 dark:border-slate-800 bg-background px-3 py-1.5 text-xs font-semibold focus-visible:ring-1 focus-visible:ring-teal-600 outline-none max-w-xs"
+              className="h-9 rounded-md border border-slate-200 dark:border-slate-800 bg-background px-3 py-1.5 text-xs font-semibold focus-visible:ring-1 focus-visible:ring-blue-600 outline-none max-w-xs"
             >
               <option value="all">Semua Program Studi</option>
               {programs.map(prog => (
@@ -245,7 +245,7 @@ export default function AdminCareersPage() {
         <CardContent className="p-0">
           {loading ? (
             <div className="flex flex-col items-center justify-center py-16 gap-3">
-              <Loader2 className="h-8 w-8 animate-spin text-teal-600" />
+              <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
               <p className="text-sm text-muted-foreground">Memuat target karir...</p>
             </div>
           ) : error ? (
@@ -296,7 +296,7 @@ export default function AdminCareersPage() {
                             LinkedIn: <span className="font-semibold text-slate-800 dark:text-slate-200">{item.linkedinKeyword}</span>
                           </p>
                           <p className="text-slate-600 dark:text-slate-400 flex items-center gap-1">
-                            <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
                             Jobstreet: <span className="font-semibold text-slate-800 dark:text-slate-200">{item.jobstreetKeyword}</span>
                           </p>
                           <p className="text-slate-600 dark:text-slate-400 flex items-center gap-1">
@@ -310,7 +310,7 @@ export default function AdminCareersPage() {
                           <Button
                             variant="ghost"
                             size="icon"
-                            className="h-8 w-8 text-slate-500 hover:text-teal-600"
+                            className="h-8 w-8 text-slate-500 hover:text-blue-600"
                             onClick={() => handleOpenEdit(item)}
                           >
                             <Pencil className="h-3.5 w-3.5" />
@@ -339,7 +339,7 @@ export default function AdminCareersPage() {
         <DialogContent className="max-w-md">
           <DialogHeader>
             <DialogTitle className="text-base font-bold text-slate-900 dark:text-slate-50 flex items-center gap-2">
-              <Briefcase className="h-5 w-5 text-teal-600" />
+              <Briefcase className="h-5 w-5 text-blue-600" />
               {dialogMode === "create" ? "Tambah Target Karir" : "Edit Target Karir"}
             </DialogTitle>
           </DialogHeader>
@@ -351,7 +351,7 @@ export default function AdminCareersPage() {
                 <select
                   value={form.studyProgramId}
                   onChange={e => setForm({ ...form, studyProgramId: e.target.value })}
-                  className="w-full h-9 rounded-md border border-slate-200 dark:border-slate-800 bg-background px-3 py-1 text-sm focus-visible:ring-1 focus-visible:ring-teal-600 outline-none"
+                  className="w-full h-9 rounded-md border border-slate-200 dark:border-slate-800 bg-background px-3 py-1 text-sm focus-visible:ring-1 focus-visible:ring-blue-600 outline-none"
                 >
                   {programs.map(prog => (
                     <option key={prog.id} value={prog.id}>
@@ -388,13 +388,13 @@ export default function AdminCareersPage() {
                 placeholder="Deskripsikan peran dan tanggung jawab karir ini..."
                 value={form.description}
                 onChange={e => setForm({ ...form, description: e.target.value })}
-                className="w-full min-h-[70px] rounded-md border border-slate-200 dark:border-slate-800 bg-background px-3 py-2 text-sm focus-visible:ring-1 focus-visible:ring-teal-600 outline-none resize-none"
+                className="w-full min-h-[70px] rounded-md border border-slate-200 dark:border-slate-800 bg-background px-3 py-2 text-sm focus-visible:ring-1 focus-visible:ring-blue-600 outline-none resize-none"
               />
             </div>
 
             {/* Keyword fields */}
             <div className="border-t border-slate-100 dark:border-slate-800 pt-3 space-y-3">
-              <p className="text-[11px] font-bold text-teal-600 dark:text-teal-400 uppercase tracking-wider flex items-center gap-1">
+              <p className="text-[11px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider flex items-center gap-1">
                 <Link2 className="h-3.5 w-3.5" />
                 Keyword Integrasi Job Portal
               </p>
@@ -443,7 +443,7 @@ export default function AdminCareersPage() {
               <Button
                 type="submit"
                 disabled={submitting}
-                className="h-9 font-semibold text-xs bg-teal-600 hover:bg-teal-700 text-white gap-2"
+                className="h-9 font-semibold text-xs bg-blue-600 hover:bg-blue-700 text-white gap-2"
               >
                 {submitting && <Loader2 className="h-3 w-3 animate-spin" />}
                 Simpan

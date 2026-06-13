@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -211,10 +212,14 @@ export default function RegisterPage() {
     <div className="w-full space-y-6">
       {/* Mobile view Logo */}
       <div className="flex md:hidden flex-col items-center justify-center space-y-2 text-center mb-6">
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-600 shadow-md">
-          <Compass className="h-6 w-6 text-white" />
-        </div>
-        <h1 className="text-2xl font-bold tracking-tight text-foreground">Industry Mirror</h1>
+        <Image
+          src="/logo.png"
+          alt="SmartCareer Logo"
+          width={48}
+          height={48}
+          className="rounded-xl shadow-md border border-neutral-200 dark:border-neutral-800"
+        />
+        <h1 className="text-2xl font-bold tracking-tight text-foreground">SmartCareer</h1>
       </div>
 
       <div className="flex flex-col space-y-2 text-center md:text-left">
@@ -237,9 +242,9 @@ export default function RegisterPage() {
                 <span
                   className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold transition-colors duration-300 ${
                     isCurrent
-                      ? "bg-teal-600 text-white"
+                      ? "bg-blue-600 text-white"
                       : isDone
-                        ? "bg-teal-100 text-teal-800 dark:bg-teal-900/30 dark:text-teal-300"
+                        ? "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300"
                         : "bg-muted text-muted-foreground"
                   }`}
                 >
@@ -427,7 +432,7 @@ export default function RegisterPage() {
                             <Check
                               className={`h-4 w-4 shrink-0 ${
                                 selectedUniversity === u.value
-                                  ? "text-teal-600 opacity-100"
+                                  ? "text-blue-600 opacity-100"
                                   : "opacity-0"
                               }`}
                             />
@@ -613,7 +618,7 @@ export default function RegisterPage() {
         Sudah memiliki akun?{" "}
         <Link
           href="/login"
-          className="font-semibold text-teal-600 hover:text-teal-500 transition-colors duration-200"
+          className="font-semibold text-blue-600 hover:text-blue-500 transition-colors duration-200"
         >
           Masuk Disini
         </Link>

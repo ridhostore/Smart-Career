@@ -4,32 +4,32 @@ import { Cpu, TrendingUp, AlertTriangle, BookOpen, Link2, BarChart3 } from "luci
 export function FeaturesSection() {
   const features = [
     {
-      icon: <Cpu className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
+      icon: <Cpu className="h-6 w-6 text-blue-600 dark:text-blue-400" />,
       title: "Pemetaan Kompetensi AI",
       description: "Memetakan secara otomatis transkrip nilai kuliah dan SKS mahasiswa ke dalam standar kompetensi industri kerja nyata.",
     },
     {
-      icon: <TrendingUp className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
+      icon: <TrendingUp className="h-6 w-6 text-blue-600 dark:text-blue-400" />,
       title: "Fit Score Dinamis",
       description: "Menghitung kecocokan karir mahasiswa (0-100%) secara dinamis dan real-time berdasarkan peningkatan nilai akademis.",
     },
     {
-      icon: <AlertTriangle className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
+      icon: <AlertTriangle className="h-6 w-6 text-blue-600 dark:text-blue-400" />,
       title: "Analisis Skill Gap",
       description: "Menemukan kelemahan materi kuliah dan mendeteksi skill teknis yang masih kurang untuk menduduki posisi karir impian.",
     },
     {
-      icon: <BookOpen className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
+      icon: <BookOpen className="h-6 w-6 text-blue-600 dark:text-blue-400" />,
       title: "Rekomendasi Belajar AI",
       description: "Mendapatkan rekomendasi kurikulum, sertifikasi profesional, dan kursus eksternal yang dipersonalisasi oleh AI.",
     },
     {
-      icon: <Link2 className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
+      icon: <Link2 className="h-6 w-6 text-blue-600 dark:text-blue-400" />,
       title: "Portal Lowongan Kerja",
       description: "Dapatkan deep-link pencarian kerja langsung ke LinkedIn, Glints, dan JobStreet yang disaring khusus untuk kecocokan profil Anda.",
     },
     {
-      icon: <BarChart3 className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
+      icon: <BarChart3 className="h-6 w-6 text-blue-600 dark:text-blue-400" />,
       title: "Dashboard Universitas",
       description: "Analitis komprehensif bagi dosen pengelola prodi untuk meninjau rata-rata IPK, kesiapan industri, dan curriculum gap alumni.",
     },
@@ -57,7 +57,7 @@ export function FeaturesSection() {
               key={i}
               className="bg-card text-card-foreground border border-border/50 rounded-2xl p-6 transition-all duration-300 card-glow-hover flex flex-col space-y-4"
             >
-              <div className="h-12 w-12 rounded-xl bg-teal-500/10 flex items-center justify-center border border-teal-500/20 shrink-0">
+              <div className="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 shrink-0">
                 {f.icon}
               </div>
               <div className="space-y-2">

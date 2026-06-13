@@ -80,7 +80,7 @@ export default function AdminUsersPage() {
       case "university":
         return <Building className="h-4 w-4 text-amber-500 shrink-0" />;
       default:
-        return <GraduationCap className="h-4 w-4 text-teal-600 shrink-0" />;
+        return <GraduationCap className="h-4 w-4 text-blue-600 shrink-0" />;
     }
   };
 
@@ -100,7 +100,7 @@ export default function AdminUsersPage() {
         );
       default:
         return (
-          <span className="inline-flex items-center gap-1 rounded bg-teal-50 dark:bg-teal-950/20 px-2 py-0.5 text-xs font-bold text-teal-700 dark:text-teal-400 border border-teal-200 dark:border-teal-900/30">
+          <span className="inline-flex items-center gap-1 rounded bg-blue-50 dark:bg-blue-950/20 px-2 py-0.5 text-xs font-bold text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-900/30">
             Mahasiswa
           </span>
         );
@@ -122,7 +122,7 @@ export default function AdminUsersPage() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl font-extrabold tracking-tight flex items-center gap-2">
-            <Users className="h-6 w-6 text-teal-600" />
+            <Users className="h-6 w-6 text-blue-600" />
             Kelola Pengguna
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
@@ -154,7 +154,7 @@ export default function AdminUsersPage() {
             <select
               value={selectedRoleFilter}
               onChange={e => setSelectedRoleFilter(e.target.value)}
-              className="h-9 rounded-md border border-slate-200 dark:border-slate-800 bg-background px-3 py-1.5 text-xs font-semibold focus-visible:ring-1 focus-visible:ring-teal-600 outline-none"
+              className="h-9 rounded-md border border-slate-200 dark:border-slate-800 bg-background px-3 py-1.5 text-xs font-semibold focus-visible:ring-1 focus-visible:ring-blue-600 outline-none"
             >
               <option value="all">Semua Peran</option>
               <option value="student">Mahasiswa</option>
@@ -177,7 +177,7 @@ export default function AdminUsersPage() {
         <CardContent className="p-0">
           {loading ? (
             <div className="flex flex-col items-center justify-center py-16 gap-3">
-              <Loader2 className="h-8 w-8 animate-spin text-teal-600" />
+              <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
               <p className="text-sm text-muted-foreground">Memuat pengguna...</p>
             </div>
           ) : error ? (
@@ -231,7 +231,7 @@ export default function AdminUsersPage() {
                       </td>
                       <td className="px-6 py-4 text-right">
                         {togglingId === user.id ? (
-                          <Loader2 className="h-4 w-4 animate-spin text-teal-600 ml-auto mr-4" />
+                          <Loader2 className="h-4 w-4 animate-spin text-blue-600 ml-auto mr-4" />
                         ) : (
                           <Button
                             variant="outline"

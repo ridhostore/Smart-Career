@@ -9,7 +9,7 @@ export function HeroSection() {
   return (
     <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden bg-slate-50 dark:bg-slate-950">
       {/* Dynamic blurred colored background blobs */}
-      <div className="absolute top-[10%] left-[-10%] h-[35%] w-[35%] rounded-full bg-teal-500/10 blur-[100px] animate-pulse-slow" />
+      <div className="absolute top-[10%] left-[-10%] h-[35%] w-[35%] rounded-full bg-blue-500/10 blur-[100px] animate-pulse-slow" />
       <div className="absolute top-[30%] right-[-10%] h-[35%] w-[35%] rounded-full bg-amber-500/10 blur-[100px] animate-pulse-slow" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -17,7 +17,7 @@ export function HeroSection() {
           
           {/* Text content side */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-xs font-semibold text-teal-700 dark:text-teal-300">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-700 dark:text-blue-300">
               <Sparkles className="h-3.5 w-3.5" />
               <span>Platform Karir Mahasiswa Ekonomi No.1 di Indonesia</span>
             </div>
@@ -34,7 +34,7 @@ export function HeroSection() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Link href="/register" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto font-semibold shadow-lg shadow-teal-500/20 hover:shadow-teal-500/30 gap-2">
+                <Button size="lg" className="w-full sm:w-auto font-semibold shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 gap-2">
                   <span>Mulai Analisis Karir</span>
                   <ArrowRight className="h-5 w-5" />
                 </Button>
@@ -75,7 +75,7 @@ export function HeroSection() {
                 {/* Mockup Header */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="h-8 w-8 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-600">
+                    <div className="h-8 w-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-600">
                       <Cpu className="h-4 w-4" />
                     </div>
                     <div>
@@ -97,7 +97,7 @@ export function HeroSection() {
                   </div>
                   <div className="text-right">
                     <p className="text-xs text-muted-foreground">Kecocokan (Fit Score)</p>
-                    <p className="text-2xl font-black text-teal-600 dark:text-teal-400">92.4%</p>
+                    <p className="text-2xl font-black text-blue-600 dark:text-blue-400">92.4%</p>
                   </div>
                 </div>
 
@@ -123,10 +123,10 @@ export function HeroSection() {
 
                 {/* Decorative visual charts mockup */}
                 <div className="pt-2">
-                  <div className="h-12 w-full rounded-lg bg-gradient-to-r from-teal-500/10 to-teal-500/20 border border-teal-500/20 flex items-center justify-center relative overflow-hidden">
-                    <span className="text-xs font-semibold text-teal-800 dark:text-teal-300">Menghitung Proyeksi Gaji: Rp 12.5M - 18M/tahun</span>
+                  <div className="h-12 w-full rounded-lg bg-gradient-to-r from-blue-500/10 to-blue-500/20 border border-blue-500/20 flex items-center justify-center relative overflow-hidden">
+                    <span className="text-xs font-semibold text-blue-800 dark:text-blue-300">Menghitung Proyeksi Gaji: Rp 12.5M - 18M/tahun</span>
                     {/* decorative wave lines inside */}
-                    <div className="absolute bottom-0 inset-x-0 h-1 bg-teal-500/40" />
+                    <div className="absolute bottom-0 inset-x-0 h-1 bg-blue-500/40" />
                   </div>
                 </div>
 
@@ -145,7 +145,7 @@ export function HeroSection() {
 
               {/* Smaller overlay card 2 */}
               <div className="absolute bottom-[-20px] left-[-30px] hidden sm:block bg-background border border-border p-3 rounded-lg shadow-xl flex items-center gap-2 max-w-[170px]">
-                <div className="h-8 w-8 rounded-lg bg-teal-100 dark:bg-teal-950 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold text-sm">
+                <div className="h-8 w-8 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-sm">
                   AI
                 </div>
                 <div>

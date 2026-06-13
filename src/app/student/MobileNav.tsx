@@ -48,7 +48,7 @@ export default function MobileNav() {
               href={item.href}
               className={`flex flex-col items-center justify-center flex-1 py-1 text-center transition-all duration-200 ${
                 isActive
-                  ? "text-teal-600 dark:text-teal-400 font-bold scale-105"
+                  ? "text-blue-600 dark:text-blue-400 font-bold scale-105"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >

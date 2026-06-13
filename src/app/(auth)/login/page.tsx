@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -72,10 +73,14 @@ export default function LoginPage() {
     <div className="w-full space-y-6">
       {/* Mobile view Logo */}
       <div className="flex md:hidden flex-col items-center justify-center space-y-2 text-center mb-8">
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-600 shadow-md">
-          <Compass className="h-6 w-6 text-white" />
-        </div>
-        <h1 className="text-2xl font-bold tracking-tight text-foreground">Industry Mirror</h1>
+        <Image
+          src="/logo.png"
+          alt="SmartCareer Logo"
+          width={48}
+          height={48}
+          className="rounded-xl shadow-md border border-neutral-200 dark:border-neutral-800"
+        />
+        <h1 className="text-2xl font-bold tracking-tight text-foreground">SmartCareer</h1>
       </div>
 
       <div className="flex flex-col space-y-2 text-center md:text-left">
@@ -109,7 +114,7 @@ export default function LoginPage() {
             <Label htmlFor="password">Password</Label>
             <Link
               href="/forgot-password"
-              className="text-xs font-semibold text-teal-600 hover:text-teal-500 transition-colors duration-200"
+              className="text-xs font-semibold text-blue-600 hover:text-blue-500 transition-colors duration-200"
             >
               Lupa Password?
             </Link>
@@ -169,7 +174,7 @@ export default function LoginPage() {
         Belum memiliki akun?{" "}
         <Link
           href="/register"
-          className="font-semibold text-teal-600 hover:text-teal-500 transition-colors duration-200"
+          className="font-semibold text-blue-600 hover:text-blue-500 transition-colors duration-200"
         >
           Daftar Sekarang
         </Link>

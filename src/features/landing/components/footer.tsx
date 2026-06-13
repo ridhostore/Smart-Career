@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Compass, Linkedin, Twitter, Github, Mail, Phone, MapPin } from "lucide-react";
 
 export function LandingFooter() {
@@ -9,10 +10,14 @@ export function LandingFooter() {
         {/* Column 1: Info & Brand */}
         <div className="space-y-4">
           <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight text-white">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-600 shadow-md">
-              <Compass className="h-5 w-5 text-white" />
-            </div>
-            <span>Industry Mirror</span>
+            <Image
+              src="/logo.png"
+              alt="SmartCareer Logo"
+              width={36}
+              height={36}
+              className="rounded-lg shadow-md border border-neutral-800"
+            />
+            <span>SmartCareer</span>
           </Link>
           <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
             Platform intelijen karir terintegrasi kecerdasan buatan (AI) untuk membantu mahasiswa ekonomi
@@ -103,15 +108,15 @@ export function LandingFooter() {
           <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Kontak</h4>
           <ul className="space-y-3 text-sm text-slate-400">
             <li className="flex items-start gap-3">
-              <MapPin className="h-5 w-5 text-teal-500 shrink-0 mt-0.5" />
+              <MapPin className="h-5 w-5 text-blue-500 shrink-0 mt-0.5" />
               <span>Jakarta, Indonesia</span>
             </li>
             <li className="flex items-center gap-3">
-              <Mail className="h-5 w-5 text-teal-500 shrink-0" />
-              <span>support@industrymirror.id</span>
+              <Mail className="h-5 w-5 text-blue-500 shrink-0" />
+              <span>support@smartcareer.id</span>
             </li>
             <li className="flex items-center gap-3">
-              <Phone className="h-5 w-5 text-teal-500 shrink-0" />
+              <Phone className="h-5 w-5 text-blue-500 shrink-0" />
               <span>+62 812-3456-7890</span>
             </li>
           </ul>
@@ -119,7 +124,7 @@ export function LandingFooter() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-900 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-        <p>&copy; {new Date().getFullYear()} Industry Mirror. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} SmartCareer. All rights reserved.</p>
         <p>Dibuat untuk mencerdaskan generasi penerus bangsa Indonesia.</p>
       </div>
     </footer>

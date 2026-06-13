@@ -45,10 +45,10 @@ const fadeIn = {
 };
 
 const CHART_COLORS = [
-  "hsl(173, 83%, 26%)", // Teal dark
-  "hsl(173, 72%, 40%)", // Teal light
+  "hsl(221, 83%, 35%)", // Blue dark
+  "hsl(221, 83%, 53%)", // Blue accent
   "hsl(38, 92%, 50%)",  // Gold/Amber
-  "hsl(221, 83%, 53%)", // Blue
+  "hsl(217, 91%, 60%)", // Blue light
   "hsl(291, 94%, 44%)", // Purple
   "hsl(160, 60%, 45%)", // Mint
   "hsl(340, 75%, 55%)", // Rose
@@ -106,7 +106,7 @@ export default function UniversityDashboardPage() {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="flex flex-col items-center gap-4">
-          <Loader2 className="h-8 w-8 animate-spin text-teal-600" />
+          <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
           <p className="text-sm text-muted-foreground">Memuat data institusi...</p>
         </div>
       </div>
@@ -119,7 +119,7 @@ export default function UniversityDashboardPage() {
         <Card className="max-w-md w-full">
           <CardContent className="pt-6 text-center space-y-4">
             <p className="text-destructive font-medium">{error || "Data tidak tersedia"}</p>
-            <Button variant="outline" onClick={loadAllData} className="gap-2 border-teal-600/30 text-teal-700">
+            <Button variant="outline" onClick={loadAllData} className="gap-2 border-blue-600/30 text-blue-700">
               <RefreshCw className="h-4 w-4" />
               Coba Lagi
             </Button>
@@ -135,14 +135,14 @@ export default function UniversityDashboardPage() {
       value: stats.totalStudents,
       subtitle: "Mahasiswa terdaftar aktif",
       icon: GraduationCap,
-      color: "hsl(173, 83%, 26%)",
+      color: "hsl(221, 83%, 35%)",
     },
     {
       title: "Rata-rata Nilai",
       value: stats.averageGrade.toFixed(1),
       subtitle: "Skala 0 - 100",
       icon: TrendingUp,
-      color: "hsl(173, 72%, 40%)",
+      color: "hsl(221, 83%, 53%)",
     },
     {
       title: "Career Fit Average",
@@ -156,7 +156,7 @@ export default function UniversityDashboardPage() {
       value: stats.mostSelectedCareer,
       subtitle: `Serta paling sedikit: ${stats.leastSelectedCareer}`,
       icon: Award,
-      color: "hsl(221, 83%, 53%)",
+      color: "hsl(217, 91%, 60%)",
       isText: true,
     },
   ];
@@ -171,14 +171,14 @@ export default function UniversityDashboardPage() {
       >
         <div>
           <h1 className="text-2xl font-extrabold tracking-tight flex items-center gap-2">
-            <Building className="h-6 w-6 text-teal-600" />
+            <Building className="h-6 w-6 text-blue-600" />
             Dashboard Overview
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
             Visualisasi performa akademik kolektif dan keselarasan karir mahasiswa
           </p>
         </div>
-        <Button variant="outline" size="sm" onClick={loadAllData} className="gap-2 border-teal-600/20 hover:bg-teal-50 dark:hover:bg-teal-950/20 text-teal-700 dark:text-teal-400">
+        <Button variant="outline" size="sm" onClick={loadAllData} className="gap-2 border-blue-600/20 hover:bg-blue-50 dark:hover:bg-blue-950/20 text-blue-700 dark:text-blue-400">
           <RefreshCw className="h-3.5 w-3.5" />
           Refresh Data
         </Button>
@@ -229,7 +229,7 @@ export default function UniversityDashboardPage() {
           <Card className="card-glow border border-slate-200 dark:border-slate-800">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-bold flex items-center gap-2 text-slate-800 dark:text-slate-200">
-                <TrendingUp className="h-4 w-4 text-teal-600" />
+                <TrendingUp className="h-4 w-4 text-blue-600" />
                 Distribusi Huruf Mutu (Nilai Kelas)
               </CardTitle>
             </CardHeader>
@@ -270,7 +270,7 @@ export default function UniversityDashboardPage() {
           <Card className="card-glow border border-slate-200 dark:border-slate-800">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-bold flex items-center gap-2 text-slate-800 dark:text-slate-200">
-                <Briefcase className="h-4 w-4 text-teal-600" />
+                <Briefcase className="h-4 w-4 text-blue-600" />
                 Distribusi Pilihan Karir Industri
               </CardTitle>
             </CardHeader>
@@ -328,7 +328,7 @@ export default function UniversityDashboardPage() {
         <Card className="card-glow border border-slate-200 dark:border-slate-800">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-bold flex items-center gap-2 text-slate-800 dark:text-slate-200">
-              <GraduationCap className="h-4 w-4 text-teal-600" />
+              <GraduationCap className="h-4 w-4 text-blue-600" />
               Performa Rata-rata Mata Kuliah
             </CardTitle>
           </CardHeader>
@@ -357,7 +357,7 @@ export default function UniversityDashboardPage() {
                       "Performa",
                     ]}
                   />
-                  <Bar dataKey="averageGrade" fill="hsl(173, 72%, 40%)" radius={[0, 4, 4, 0]} barSize={16} />
+                  <Bar dataKey="averageGrade" fill="hsl(221, 83%, 53%)" radius={[0, 4, 4, 0]} barSize={16} />
                 </BarChart>
               </ResponsiveContainer>
             ) : (

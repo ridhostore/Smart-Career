@@ -18,14 +18,14 @@ export function AiSection() {
           <div className="flex justify-center order-last lg:order-first">
             <div className="w-full max-w-lg bg-card text-card-foreground border border-border/50 rounded-2xl p-6 shadow-xl space-y-6 relative overflow-hidden">
               {/* Dynamic top gradient bar */}
-              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-teal-500 to-amber-500" />
+              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-500 to-amber-500" />
               
               <div className="flex items-center justify-between border-b border-border/50 pb-4">
                 <div className="flex items-center gap-2">
-                  <BrainCircuit className="h-5 w-5 text-teal-600 dark:text-teal-400" />
+                  <BrainCircuit className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                   <h4 className="text-base font-bold text-foreground">AI Career Intelligence Report</h4>
                 </div>
-                <span className="text-[10px] bg-teal-500/10 text-teal-600 dark:text-teal-400 font-semibold px-2 py-0.5 rounded-full">
+                <span className="text-[10px] bg-blue-500/10 text-blue-600 dark:text-blue-400 font-semibold px-2 py-0.5 rounded-full">
                   Llama-3.3 Analyzed
                 </span>
               </div>
@@ -77,7 +77,7 @@ export function AiSection() {
                 <h5 className="text-xs font-bold uppercase tracking-wider text-foreground">Timeline Rencana Aksi (Roadmap)</h5>
                 <div className="relative border-l border-border/80 pl-4 ml-2 space-y-4 text-xs font-light text-foreground">
                   <div className="relative">
-                    <div className="absolute left-[-21px] top-0.5 h-3.5 w-3.5 rounded-full bg-teal-600 border-2 border-white dark:border-slate-950" />
+                    <div className="absolute left-[-21px] top-0.5 h-3.5 w-3.5 rounded-full bg-blue-600 border-2 border-white dark:border-slate-950" />
                     <p className="font-bold text-foreground">Bulan 1: Fokus Pemodelan Finansial</p>
                     <p className="text-[10px] text-muted-foreground">Pelajari Excel formula tingkat lanjut dan valuasi arus kas (DCF).</p>
                   </div>
@@ -93,7 +93,7 @@ export function AiSection() {
 
           {/* Right Column: Text content */}
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-xs font-semibold text-teal-700 dark:text-teal-300">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-700 dark:text-blue-300">
               <Sparkles className="h-3.5 w-3.5 animate-pulse" />
               <span>Ditenagai Generative AI Cerdas</span>
             </div>
@@ -109,19 +109,19 @@ export function AiSection() {
 
             <div className="space-y-3">
               <div className="flex items-center gap-2">
-                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-teal-100 text-teal-600 dark:bg-teal-900/40 dark:text-teal-400">
+                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-400">
                   <CheckSquare className="h-3 w-3" />
                 </div>
                 <span className="text-sm font-semibold text-foreground">Llama-3.3-70b Structured Prompt Engine</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-teal-100 text-teal-600 dark:bg-teal-900/40 dark:text-teal-400">
+                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-400">
                   <CheckSquare className="h-3 w-3" />
                 </div>
                 <span className="text-sm font-semibold text-foreground">Validasi Keluaran Skema JSON Zod yang Ketat</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-teal-100 text-teal-600 dark:bg-teal-900/40 dark:text-teal-400">
+                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-400">
                   <CheckSquare className="h-3 w-3" />
                 </div>
                 <span className="text-sm font-semibold text-foreground">Sistem Caching Rekomendasi 24 Jam demi Efisiensi</span>

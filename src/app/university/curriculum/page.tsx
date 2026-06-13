@@ -78,7 +78,7 @@ export default function UniversityCurriculumPage() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl font-extrabold tracking-tight flex items-center gap-2">
-            <BrainCircuit className="h-6 w-6 text-teal-600" />
+            <BrainCircuit className="h-6 w-6 text-blue-600" />
             AI Penyelarasan Kurikulum
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
@@ -90,9 +90,9 @@ export default function UniversityCurriculumPage() {
       {/* Intro & CTA */}
       {!generating && !report && !error && (
         <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-          <Card className="border border-teal-500/20 bg-teal-50/10 dark:bg-teal-950/5 overflow-hidden">
+          <Card className="border border-blue-500/20 bg-blue-50/10 dark:bg-blue-950/5 overflow-hidden">
             <CardContent className="p-8 text-center max-w-2xl mx-auto space-y-6">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal-100 dark:bg-teal-900/30 text-teal-600">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600">
                 <Sparkles className="h-8 w-8" />
               </div>
               <div className="space-y-2">
@@ -105,7 +105,7 @@ export default function UniversityCurriculumPage() {
               </div>
               <Button
                 onClick={handleGenerateReport}
-                className="bg-teal-600 hover:bg-teal-700 text-white font-semibold shadow-md px-6 py-2"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-md px-6 py-2"
               >
                 Mulai Analisis AI Sekarang
               </Button>
@@ -126,14 +126,14 @@ export default function UniversityCurriculumPage() {
             <Card className="border border-slate-200 dark:border-slate-800 shadow-lg bg-card text-center">
               <CardContent className="pt-8 pb-10 px-6 space-y-6">
                 <div className="relative mx-auto flex h-16 w-16 items-center justify-center">
-                  <span className="absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-20 animate-ping" />
-                  <Loader2 className="h-10 w-10 animate-spin text-teal-600" />
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-20 animate-ping" />
+                  <Loader2 className="h-10 w-10 animate-spin text-blue-600" />
                 </div>
                 <div className="space-y-2">
                   <h3 className="font-extrabold text-slate-900 dark:text-slate-50">
                     Sedang Memproses Laporan...
                   </h3>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold text-teal-600 dark:text-teal-400">
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold text-blue-600 dark:text-blue-400">
                     Langkah {genStep + 1} dari {steps.length}
                   </p>
                 </div>
@@ -145,7 +145,7 @@ export default function UniversityCurriculumPage() {
                       {genStep > idx ? (
                         <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" />
                       ) : genStep === idx ? (
-                        <Loader2 className="h-4 w-4 animate-spin text-teal-600 shrink-0" />
+                        <Loader2 className="h-4 w-4 animate-spin text-blue-600 shrink-0" />
                       ) : (
                         <div className="h-4 w-4 rounded-full border border-slate-300 dark:border-slate-700 shrink-0" />
                       )}
@@ -194,7 +194,7 @@ export default function UniversityCurriculumPage() {
           <Card className="border border-slate-200 dark:border-slate-800 shadow-sm bg-card">
             <CardContent className="p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4 text-left">
-                <div className="p-3 bg-teal-50 dark:bg-teal-950/30 rounded-xl text-teal-600 shrink-0">
+                <div className="p-3 bg-blue-50 dark:bg-blue-950/30 rounded-xl text-blue-600 shrink-0">
                   <BrainCircuit className="h-6 w-6" />
                 </div>
                 <div>
@@ -205,7 +205,7 @@ export default function UniversityCurriculumPage() {
               <Button
                 onClick={handleGenerateReport}
                 variant="outline"
-                className="gap-2 border-teal-600/20 text-teal-700 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950/10 h-9 shrink-0 font-semibold"
+                className="gap-2 border-blue-600/20 text-blue-700 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/10 h-9 shrink-0 font-semibold"
               >
                 <RefreshCw className="h-3.5 w-3.5" />
                 Regenerasi Analisis
@@ -308,7 +308,7 @@ export default function UniversityCurriculumPage() {
               <Card className="border border-slate-200 dark:border-slate-800">
                 <CardHeader className="pb-3 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-100 dark:border-slate-800">
                   <CardTitle className="text-sm font-bold flex items-center gap-2 text-slate-800 dark:text-slate-200">
-                    <Briefcase className="h-4.5 w-4.5 text-teal-600" />
+                    <Briefcase className="h-4.5 w-4.5 text-blue-600" />
                     Kebutuhan Bidang Karir Terdeteksi
                   </CardTitle>
                 </CardHeader>
@@ -318,7 +318,7 @@ export default function UniversityCurriculumPage() {
                       {report.industryDemands.map((demand: string, index: number) => (
                         <span
                           key={index}
-                          className="inline-flex items-center rounded-full bg-teal-50 dark:bg-teal-950/20 px-3 py-1 text-xs font-semibold text-teal-700 dark:text-teal-400 border border-teal-200 dark:border-teal-900/30"
+                          className="inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-950/20 px-3 py-1 text-xs font-semibold text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-900/30"
                         >
                           {demand}
                         </span>

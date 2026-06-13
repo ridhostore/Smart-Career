@@ -58,7 +58,7 @@ export default function AdminDashboardPage() {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="flex flex-col items-center gap-4">
-          <Loader2 className="h-8 w-8 animate-spin text-teal-600" />
+          <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
           <p className="text-sm text-muted-foreground">Memuat dashboard monitor...</p>
         </div>
       </div>
@@ -71,7 +71,7 @@ export default function AdminDashboardPage() {
         <Card className="max-w-md w-full">
           <CardContent className="pt-6 text-center space-y-4">
             <p className="text-destructive font-medium">{error || "Statistik tidak tersedia"}</p>
-            <Button variant="outline" onClick={loadStats} className="gap-2 border-teal-600/30 text-teal-700">
+            <Button variant="outline" onClick={loadStats} className="gap-2 border-blue-600/30 text-blue-700">
               <RefreshCw className="h-4 w-4" />
               Coba Lagi
             </Button>
@@ -132,7 +132,7 @@ export default function AdminDashboardPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-extrabold tracking-tight flex items-center gap-2">
-            <ShieldCheck className="h-6 w-6 text-teal-600" />
+            <ShieldCheck className="h-6 w-6 text-blue-600" />
             Dashboard Monitor
           </h1>
           <p className="text-sm text-muted-foreground mt-1">
@@ -182,7 +182,7 @@ export default function AdminDashboardPage() {
         <Card className="border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
           <CardHeader className="border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
             <CardTitle className="text-sm font-bold flex items-center gap-2 text-slate-800 dark:text-slate-200">
-              <Activity className="h-4.5 w-4.5 text-teal-600" />
+              <Activity className="h-4.5 w-4.5 text-blue-600" />
               Audit Trail - Log Aktivitas Terkini
             </CardTitle>
             <CardDescription className="text-xs">10 aktivitas sistem terbaru yang dilakukan oleh pengguna</CardDescription>
