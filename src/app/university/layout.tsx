@@ -16,6 +16,7 @@ import { createClient } from "@/lib/supabase/server";
 import { prisma } from "@/lib/prisma";
 import { logoutAction } from "@/features/auth/actions";
 import { Button } from "@/components/ui/button";
+import MobileSidebar from "./MobileSidebar";
 
 export default async function UniversityLayout({
   children,
@@ -149,8 +150,15 @@ export default async function UniversityLayout({
       {/* Main container */}
       <div className="flex flex-1 flex-col overflow-hidden">
         {/* Top Header */}
-        <header className="flex h-16 items-center justify-between border-b border-border bg-card px-6 text-card-foreground">
-          <div className="flex items-center gap-2">
+        <header className="flex h-16 items-center justify-between border-b border-border bg-card px-4 md:px-6 text-card-foreground">
+          <div className="flex items-center gap-3">
+            <MobileSidebar
+              universityName={universityName}
+              userName={user.fullName}
+              userEmail={user.email}
+              position={adminProfile.position || "Administrator Kampus"}
+              handleLogout={logoutAction}
+            />
             <span className="text-xs font-semibold text-muted-foreground bg-slate-100 dark:bg-slate-900 border border-border px-3 py-1 rounded-full flex items-center gap-1">
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
               Portal Akademik &bull; Kampus
@@ -162,12 +170,6 @@ export default async function UniversityLayout({
               <p className="font-bold text-foreground">{user.fullName}</p>
               <p className="text-xs text-muted-foreground">{user.email}</p>
             </div>
-            {/* Simple Mobile Logout Button */}
-            <form action={handleLogout} className="md:hidden">
-              <Button size="icon" variant="ghost" className="text-red-600">
-                <LogOut className="h-4 w-4" />
-              </Button>
-            </form>
           </div>
         </header>
 
